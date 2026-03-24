@@ -1,8 +1,8 @@
 
 # 🧑‍💻 Virtual AI Voice Assistant
 
-An **AI-powered virtual assistant** built with **React, Node.js, Express, MongoDB, and Google Gemini AI**.  
-It can **listen to your voice, respond with speech (US accent), search on Google & YouTube, open apps like Instagram/Facebook, show weather, answer general questions, and more.**  
+An **AI-powered virtual assistant** built with **React, Node.js, Express, MongoDB, and Groq AI**.  
+It can **listen to your voice, respond with speech (US accent),Talk to you like a friend, answer complex questions, answer general questions, and more.**  
 
 ---
 
@@ -12,8 +12,7 @@ It can **listen to your voice, respond with speech (US accent), search on Google
 3. [Installation & Setup](#-installation--setup)
 4. [Environment Variables](#-environment-variables)
 5. [Getting API Keys](#-getting-api-keys)
-   - [Gemini API Key](#-1-gemini-api-key)
-   - [Cloudinary API Keys](#-2-cloudinary-api-keys)
+   - [Groq API Key](#-1-gemini-api-key)
 6. [Usage](#-usage)
 7. [Screenshots](#-screenshots)
 8. [Future Improvements](#-future-improvements)
@@ -24,14 +23,13 @@ It can **listen to your voice, respond with speech (US accent), search on Google
 ## ✨ Features
 - 🎙️ **Voice recognition** using Web Speech API  
 - 🗣️ **Text-to-Speech (US accent)** for smooth conversations  
-- 🤖 **AI-powered responses** using **Google Gemini AI**  
+- 🤖 **AI-powered responses** using **Groq AI**  
 - 🔍 **Smart actions**:
-  - Google Search  
-  - YouTube Search (with channel detection)  
-  - Weather lookup  
+  - Real Time information   
+  - High Accuracy  
   - Calculator  
-  - Social media shortcuts (Instagram, Facebook)  
-- 🖼️ **Customizable Assistant Profile** (name + avatar via Cloudinary)  
+  - etc
+- 🖼️ **Customizable Assistant Profile** (name + avatar)  
 - 📝 **User history tracking** stored in MongoDB  
 - 🔑 **Authentication & Security** with JWT and bcrypt  
 
@@ -50,9 +48,8 @@ It can **listen to your voice, respond with speech (US accent), search on Google
 - MongoDB + Mongoose  
 - JWT for authentication  
 - bcryptjs for password hashing  
-- Multer & Cloudinary for image uploads  
-- Google Gemini AI (Generative Language API)  
-- Moment.js for date/time handling  
+- Groq AI (Generative Language API)  
+- Moment.js for date handling  
 
 ---
 
@@ -62,8 +59,8 @@ It can **listen to your voice, respond with speech (US accent), search on Google
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/Sarg3n7/Virtual-AI-Assistant.git
-cd Virtual-AI-Assistant
+git clone https://github.com/Balamurugan66-code/AI-Voice-Assistant-VA.git
+cd AI-Voice-Assistant-VA
 ```
 
 ### 2️⃣ Setup Backend
@@ -89,11 +86,8 @@ You need to configure environment variables for both **backend** and **frontend*
 PORT=5000
 MONGO_URI=your_mongo_connection_string
 JWT_SECRET=your_secret_key
+GROQ_API_KEY=your_groq_api_key_here
 
-GEMINI_API_KEY=your_gemini_api_key_here
-CLOUDINARY_CLOUD_NAME=your_cloud_name_here
-CLOUDINARY_API_KEY=your_cloudinary_api_key_here
-CLOUDINARY_API_SECRET=your_cloudinary_api_secret_here
 ```
 
 2. Copy `.env.example` to `.env`:
@@ -107,31 +101,17 @@ cp .env.example .env
 
 ## 🔑 Getting API Keys
 
-### 🔹 1. Gemini API Key
-1. Go to **Google AI Studio** → [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)  
-2. Sign in with your Google account.  
-3. Click **“Create API Key”**.  
-4. Copy the key and paste it into `.env`:  
+### 🔹 1. Groq API Key
+1. Go to 👉 https://console.groq.com
+2. Sign up / login
+3. Go to API Keys section
+4. Click Create API Key
+5. Copy and paste into .env:  
    ```env
-   GEMINI_API_KEY=your_generated_key_here
+   GROQ_API_KEY=your_generated_key_here
    ```
 
 ---
-
-### 🔹 2. Cloudinary API Keys
-1. Go to **Cloudinary** → [https://cloudinary.com](https://cloudinary.com)  
-2. Create a **free account**.  
-3. After logging in, go to **Dashboard**.  
-4. Copy your credentials:
-   - **Cloud Name**  
-   - **API Key**  
-   - **API Secret**  
-5. Paste them into `.env`:
-   ```env
-   CLOUDINARY_CLOUD_NAME=your_cloud_name
-   CLOUDINARY_API_KEY=your_api_key
-   CLOUDINARY_API_SECRET=your_api_secret
-   ```
 
 ---
 
@@ -164,14 +144,24 @@ npm run dev
 
 ---
 
+##✨Features
+- 🎤 Voice input using Web Speech API
+- 🤖 AI-powered responses using Groq API
+- 🔊 Text-to-speech output
+- 🔐 Secure user authentication (JWT + MongoDB)
+- ⚡ Real-time interaction with low latency
+- 🎨 Customizable assistant interface
+
+---
+
 ## 📌 Future Improvements
 - 🌎 Multi-language support  
 - 🎵 Spotify/YouTube Music integration  
-- 📅 Calendar & reminders  
+- 📅 Task Automation & reminders  
 - 💻 Desktop app version with Electron  
 
 ---
 
 ## 👨‍💻 Author
-**Shashwat Shivam**  
-Built with ❤️ using MERN + Gemini AI  
+**Balamurugan B**  
+Built with ❤️ using MERN + Groq AI  
