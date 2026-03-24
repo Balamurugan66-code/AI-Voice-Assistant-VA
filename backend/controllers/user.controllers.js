@@ -427,13 +427,22 @@ export const getCurrentUser = async (req, res) => {
 export const updateAssistant = async (req, res) => {
   try {
     const { assistantName, imageUrl } = req.body;
+    console.log("BODY:", req.body);
+    console.log("FILE:", req.file);
+
+    if (!assistantName) {
+      return res.status(400).json({ message: "Assistant name is required" });
+    }
+    
     let assistantImage;
 
-    if (req.file) {
-      assistantImage = await uploadOnCloudinary(req.file.path);
-    } else {
-      assistantImage = imageUrl;
-    }
+if (req.file) {
+  assistantImage = await uploadOnCloudinary(req.file.path);
+} else if (imageUrl) {
+  assistantImage = imageUrl;
+} else {
+  assistantImage = ""; // fallback
+}
 
     const user = await User.findByIdAndUpdate(
       req.userId,
