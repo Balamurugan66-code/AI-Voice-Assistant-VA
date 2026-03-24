@@ -134,6 +134,15 @@ npm run dev
 
 ---
 
+## 🧠 How It Works
+
+1. User gives voice input using Web Speech API  
+2. Speech is converted to text  
+3. Backend sends request to Groq API  
+4. AI generates response  
+5. Response is converted to speech and played  
+---
+
 ## 📸 Screenshots
 
 ### User SignIn Page
