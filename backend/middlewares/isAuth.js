@@ -12,7 +12,7 @@ const isAuth = async (req, res, next) => {
 
     const verifyToken = jwt.verify(token, process.env.JWT_SECRET)
 
-    req.userId = verifyToken.id
+    req.userId = verifyToken.userId
 
     next()
 
