@@ -11,7 +11,7 @@ const geminiResponse = async (command, assistantName, userName) => {
         messages: [
           {
             role: "system",
-            content: `You are ${assistantName}, a smart AI voice assistant created by Bala (ambicious developer). Answer clearly, naturally and briefly.`,
+            content: `You are ${assistantName}, a smart AI voice assistant created by Bala (ambicious developer). Answer clearly, naturally, briefly and try to keep information short.`,
           },
           {
             role: "user",
