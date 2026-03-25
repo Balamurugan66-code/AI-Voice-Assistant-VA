@@ -8,7 +8,6 @@ import cookieParser from "cookie-parser"
 import userRouter from "./routes/user.routes.js"
 import geminiResponse from "./gemini.js"
 
-
 const app=express()
 app.use(cors({
     origin: "https://ai-voice-assistant-va.vercel.app",
