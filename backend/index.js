@@ -11,12 +11,9 @@ import geminiResponse from "./gemini.js"
 
 const app=express()
 app.use(cors({
-    origin:[
-        "https:http://localhost:5173",
-        "https://ai-voice-assistant-va.vercel.app"
-    ],
+    origin: "https://ai-voice-assistant-va.vercel.app",
     credentials:true
-}))
+}));
 const PORT=process.env.PORT || 8000
 app.use(express.json())
 app.use(cookieParser())

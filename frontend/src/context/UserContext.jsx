@@ -1,6 +1,10 @@
 import axios from 'axios'
+
+axios.defaults.withCredentials = true;
+
 import React, { createContext, useEffect, useState } from 'react'
 export const userDataContext=createContext()
+
 function UserContext({children}) {
     const serverUrl= import.meta.env.VITE_API_BASE_URL ||"http://localhost:8000"
     const [userData,setUserData]=useState(null)
