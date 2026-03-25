@@ -21,6 +21,8 @@ try {
 
     const token=await genToken(user._id)
 
+    console.log("Signup body:", req.body);
+
     return res.status(200).json({
   user,
   token
