@@ -24,14 +24,21 @@ function Customize2() {
 
       if (backendImage) {
         formData.append("assistantImage", backendImage)
-      } else {
+      } else if (selectedImage) {
         formData.append("imageUrl", selectedImage)
       }
+
+      // 🔥 GET TOKEN
+      const token = localStorage.getItem("token")
 
       const result = await axios.post(
         `${serverUrl}/api/user/update`,
         formData,
-        { withCredentials: true }
+        {
+          headers: {
+            Authorization: `Bearer ${token}` // 🔥 IMPORTANT
+          }
+        }
       )
 
       setLoading(false)

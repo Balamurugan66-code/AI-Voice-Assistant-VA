@@ -21,15 +21,10 @@ try {
 
     const token=await genToken(user._id)
 
-    res.cookie("token",token,{
-        httpOnly:true,
-       maxAge:7*24*60*60*1000,
-       sameSite:"none",
-       secure:true, 
-       path: "/"
-    })
-
-    return res.status(201).json(user)
+    return res.status(200).json({
+  user,
+  token
+});
 
 } catch (error) {
        return res.status(500).json({message:`sign up error ${error}`})
@@ -52,14 +47,10 @@ try {
 
     const token=await genToken(user._id)
 
-    res.cookie("token",token,{
-        httpOnly:true,
-       maxAge:7*24*60*60*1000,
-       sameSite:"strict",
-       secure:false
-    })
-
-    return res.status(200).json(user)
+    return res.status(200).json({
+  user,
+  token
+});
 
 } catch (error) {
        return res.status(500).json({message:`login error ${error}`})

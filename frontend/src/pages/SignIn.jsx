@@ -18,17 +18,24 @@ const [err,setErr]=useState("")
     setErr("")
     setLoading(true)
 try {
-  let result=await axios.post(`${serverUrl}/api/auth/signin`,{
-   email,password
-  },{withCredentials:true} )
- setUserData(result.data)
-  setLoading(false)
-   navigate("/")
+  let result = await axios.post(`${serverUrl}/api/auth/signin`, {
+    email, password
+  });
+
+  // 🔥 ADD THIS LINE
+  localStorage.setItem("token", result.data.token);
+
+  // 🔥 FIX THIS LINE
+  setUserData(result.data.user);
+
+  setLoading(false);
+  navigate("/");
+
 } catch (error) {
-  console.log(error)
-  setUserData(null)
-  setLoading(false)
-  setErr(error.response.data.message)
+  console.log(error);
+  setUserData(null);
+  setLoading(false);
+  setErr(error.response.data.message);
 }
     }
   return (
